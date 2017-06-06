@@ -1,0 +1,25 @@
+# Ignore all dotfiles...
+.*
+# except for .gitignore and .editor_config
+!.gitignore
+!.editorconfig
+*.pydevproject
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+*.launch
+*.iml
+*.ipr
+*.iws
+/out/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+dist
+RUNNING_PID
+target/
