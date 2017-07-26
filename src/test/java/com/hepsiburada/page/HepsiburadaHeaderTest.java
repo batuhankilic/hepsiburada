@@ -24,6 +24,36 @@ public class HepsiburadaHeaderTest {
     @Autowired
     private HepsiburadaHeader header;
 
+    @Autowired
+    private HepsiburadaLogin login;
+
+    @Autowired
+    private HepsiburadaOrderListPage orderListPage;
+
+    @Test
+    public void getOrderDetails(){
+        homePage.goTo();
+        header.clickSiparislerim();
+        login.logIn();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        orderListPage.getOrderDetails();
+        System.out.println("Change Host!");
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        /*changeHost*/
+        webDriver.navigate().refresh();
+        orderListPage.getOrderDetails();
+
+    }
+
+
     @Test
     public void testGoToHomePageViaLogo() {
         homePage.goTo();
@@ -150,6 +180,7 @@ public class HepsiburadaHeaderTest {
         homePage.goTo();
         header.clickCartButton();
     }
+
 
 
 }
